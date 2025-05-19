@@ -2,27 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
   <title>BMI Calculator - C4Calculator</title>
   <style>
     :root {
-      --primary-color: #005577;
-      --background-color: #f5f5f5;
-      --sidebar-bg: #f0f0f0;
-      --content-bg: #ffffff;
+      --primary-color: #00aaff;
+      --bg-color: #f9fafc;
+      --card-bg: white;
       --text-color: #222;
-      --link-hover: #007799;
+      --border-radius: 12px;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--background-color);
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
       color: var(--text-color);
+      line-height: 1.6;
     }
 
     header {
@@ -30,148 +32,275 @@
       color: white;
       padding: 20px;
       text-align: center;
-      font-size: 1.5em;
-      font-weight: bold;
+      position: relative;
     }
 
-    .wrapper {
-      display: flex;
-      min-height: 100vh;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
 
-    nav {
-      width: 250px;
-      background-color: var(--sidebar-bg);
-      padding: 20px;
-      border-right: 1px solid #ccc;
+    .home-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
-    nav h3 {
-      margin-top: 0;
-      font-size: 1.2em;
-      color: var(--primary-color);
-    }
-
-    nav a {
-      display: block;
-      padding: 10px 0;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-
-    nav a:hover {
-      color: var(--link-hover);
+    .home-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
     }
 
     main {
-      flex: 1;
-      background-color: var(--content-bg);
-      padding: 30px;
+      padding: 20px;
+    }
+
+    main h2 {
+      text-align: center;
+      color: #005577;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .description {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 0.95rem;
+      text-align: center;
+      color: #444;
     }
 
     .calculator {
       max-width: 400px;
       margin: 0 auto;
-      background: #fff;
+      background: var(--card-bg);
       padding: 20px;
-      border-radius: 12px;
+      border-radius: var(--border-radius);
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .calculator label {
+    label {
       display: block;
-      margin: 10px 0;
+      margin: 15px 0 5px;
     }
 
-    .calculator input {
-      width: 100%;
-      padding: 8px;
-      margin-top: 4px;
-    }
-
-    .calculator button {
+    input, select {
       width: 100%;
       padding: 10px;
-      background-color: var(--primary-color);
-      color: white;
-      border: none;
-      margin-top: 15px;
-      cursor: pointer;
       font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
     }
 
-    .calculator button:hover {
-      background-color: var(--link-hover);
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #005577;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #007799;
     }
 
     #bmi-result {
-      text-align: center;
-      margin-top: 15px;
+      margin-top: 20px;
       font-weight: bold;
+      text-align: center;
+    }
+	
+
+/* BMI Chart */
+.bmi-chart {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.bmi-chart table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 400px;
+}
+
+.bmi-chart th,
+.bmi-chart td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+.bmi-chart th {
+  background-color: #f0f0f0;
+}
+
+    .ad {
+      border: 2px dashed #444;
+      padding: 10px;
+      text-align: center;
+      background: #fafafa;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    .ad-fixed {
+      position: fixed;
+      top: 150px;
+      right: 10px;
+      width: 180px;
+      background: #fafafa;
     }
 
     footer {
-      background-color: var(--sidebar-bg);
       text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-      color: #666;
-      border-top: 1px solid #ccc;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
     }
 
-    @media screen and (max-width: 768px) {
-      .wrapper {
-        flex-direction: column;
+    @media (max-width: 768px) {
+      .ad-fixed {
+        position: static;
+        width: auto;
+        margin-top: 20px;
       }
 
-      nav {
+      .calculator,
+      .ad {
         width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      main h2 {
+        font-size: 1.3rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>C4Calculator</header>
+  <header>
+     <a href="index.html" class="home-icon" aria-label="Go to homepage">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    </a>
+    <h1>C4Calculator</h1>
+  </header>
 
-  <div class="wrapper">
-    <nav>
-      <h3>Tools</h3>
-      <a href="index.html">Home</a>
-      <a href="#">Unit Converters</a>
-      <a href="#">Math Calculators</a>
-      <a href="#">Tables</a>
-      <a href="bmi-calculator.html">BMI Calculator</a>
-    </nav>
+  <main>
+    <h2>BMI Calculator</h2>
 
-    <main>
-      <h1>BMI Calculator</h1>
-      <div class="calculator">
-        <label>Weight (kg): <input type="number" id="bmi-weight" /></label>
-        <label>Height (cm): <input type="number" id="bmi-height" /></label>
-        <button onclick="calculateBMI()">Calculate</button>
-        <p id="bmi-result"></p>
-      </div>
-    </main>
-  </div>
+    <div class="calculator">
+      <label for="unit">Select Units:</label>
+      <select id="unit" onchange="toggleUnits()">
+        <option value="metric">Metric (kg / cm)</option>
+        <option value="imperial">Imperial (lbs / in)</option>
+      </select>
+
+      <label for="weight">Weight:</label>
+      <input type="number" id="weight" placeholder="Enter weight" />
+
+      <label for="height">Height:</label>
+      <input type="number" id="height" placeholder="Enter height" />
+
+      <button onclick="calculateBMI()">Calculate BMI</button>
+
+      <p id="bmi-result"></p>
+	  
+	
+
+ </div>
+
+    <div class="ad"></div>
+	<div>
+	 <p class="description">
+      Body Mass Index (BMI) is a quick screening tool that helps you estimate if your weight is healthy for your height. 
+      It’s a widely used metric calculated from your weight and height, and is used to categorize you as underweight, normal weight, overweight, or obese.
+    </p>
+	<div class="bmi-chart">
+  <h3>WHO BMI Classification</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>BMI Range</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Underweight</td><td>&lt; 18.5</td></tr>
+      <tr><td>Normal weight</td><td>18.5 – 24.9</td></tr>
+      <tr><td>Overweight</td><td>25.0 – 29.9</td></tr>
+      <tr><td>Obese</td><td>30.0 and above</td></tr>
+    </tbody>
+  </table>
+</div>
+	
+	</div>
+	
+  </main>
+
+  <aside class="ad ad-fixed"></aside>
 
   <footer>
-    &copy; 2025 CalciTools. All rights reserved.
+    &copy; 2025 C4Calculator. All rights reserved.
   </footer>
 
   <script>
     function calculateBMI() {
-      const w = parseFloat(document.getElementById('bmi-weight').value);
-      const h = parseFloat(document.getElementById('bmi-height').value) / 100;
-      if (w && h) {
-        const bmi = (w / (h * h)).toFixed(2);
-        document.getElementById('bmi-result').textContent = `Your BMI is ${bmi}`;
-      } else {
-        document.getElementById('bmi-result').textContent = 'Please enter valid values.';
-      }
-    }
+  const weight = parseFloat(document.getElementById('weight').value);
+  const height = parseFloat(document.getElementById('height').value);
+  const unit = document.getElementById('unit').value;
+  const result = document.getElementById('bmi-result');
+  
+
+  if (!weight || !height || weight <= 0 || height <= 0) {
+    result.textContent = 'Please enter valid values.';
+    pointer.style.left = '0%';
+    return;
+  }
+
+  let bmi;
+  if (unit === 'metric') {
+    const hMeters = height / 100;
+    bmi = weight / (hMeters * hMeters);
+  } else {
+    bmi = (703 * weight) / (height * height);
+  }
+
+  bmi = parseFloat(bmi.toFixed(2));
+  let category = '';
+  let position = 0;
+
+  if (bmi < 18.5) {
+    category = 'Underweight';
+    position = (bmi / 18.5) * 25;
+  } else if (bmi < 25) {
+    category = 'Normal weight';
+    position = 25 + ((bmi - 18.5) / (25 - 18.5)) * 25;
+  } else if (bmi < 30) {
+    category = 'Overweight';
+    position = 50 + ((bmi - 25) / (30 - 25)) * 25;
+  } else {
+    category = 'Obese';
+    position = 75 + ((bmi - 30) / 10) * 25;
+    if (position > 100) position = 100;
+  }
+
+  result.textContent = `Your BMI is ${bmi} (${category})`;
+  
+}
   </script>
 
 </body>
