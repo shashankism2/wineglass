@@ -2,117 +2,166 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
   <title>C4Calculator</title>
   <style>
     :root {
-      --primary-color: #005577;
-      --background-color: #f5f5f5;
-      --sidebar-bg: #f0f0f0;
-      --content-bg: #ffffff;
+      --primary-color: #00aaff;
+      --bg-color: #f9fafc;
+      --card-bg: #fff;
       --text-color: #222;
-      --link-hover: #007799;
+      --border-radius: 12px;
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--background-color);
-      color: var(--text-color);
+      padding: 0;
     }
+    
+	 html, body {
+      height: 100%;
+      margin: 0;
+    }
+	
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+	  }
 
     header {
       background-color: var(--primary-color);
       color: white;
       padding: 20px;
       text-align: center;
-      font-size: 1.5em;
-      font-weight: bold;
     }
 
-    .wrapper {
-      display: flex;
-      min-height: 100vh;
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
     }
 
-    nav {
-      width: 250px;
-      background-color: var(--sidebar-bg);
-      padding: 20px;
-      border-right: 1px solid #ccc;
+    main h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin: 30px 0 20px;
+      color: #005577;
+    }
+	
+	
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
     }
 
-    nav h3 {
+    h3 {
       margin-top: 0;
-      font-size: 1.2em;
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card a {
+      text-decoration: none;
       color: var(--primary-color);
     }
 
-    nav a {
-      display: block;
-      padding: 10px 0;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-
-    nav a:hover {
-      color: var(--link-hover);
-    }
-
-    main {
-      flex: 1;
-      background-color: var(--content-bg);
-      padding: 30px;
+    .card p {
+      font-size: 0.9rem;
+      color: #666;
     }
 
     footer {
-      background-color: var(--sidebar-bg);
       text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-      color: #666;
-      border-top: 1px solid #ccc;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+      background-color: #f1f1f1;
+      border-top: 1px solid #ddd;
     }
 
-    @media screen and (max-width: 768px) {
-      .wrapper {
-        flex-direction: column;
+    /* Mobile Optimization */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
       }
 
-      nav {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #ccc;
+      main h2 {
+        font-size: 1.4rem;
+      }
+
+      .container {
+        padding: 0 15px 30px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>C4Calculator</header>
+  <header>
+    <h1>C4Calculator</h1>
+  </header>
 
-  <div class="wrapper">
-    <nav>
-      <h3>Tools</h3>
-      <a href="#">Unit Converters</a>
-      <a href="#">Math Calculators</a>
-      <a href="#">Tables</a>
-      <a href="bmi-calculator.html">BMI Calculator</a>
-    </nav>
+  <main>
+    <h2>Discover 100+ Calculators</h2>
+  </main>
 
-    <main>
-      <h1>Try our free Online Calculators</h1>
-      <p>This site offers quick-access tools like calculators, unit converters, reference tables, and more.</p>
-      <p>Choose a category from the menu to begin.</p>
-    </main>
+  <div class="container">
+    <h3>Featured Calculators</h3>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="bmi-calculator.html">BMI Calculator</a></h3>
+        <p>Calculate your Body Mass Index quickly.</p>
+      </div>
+      <div class="card">
+        <h3><a href="time-and-date-calculator.html">Time & Date Calculator</a></h3>
+        <p>Calculations and conversions for dates and durations.</p>
+      </div>
+      <div class="card">
+        <h3><a href="math-calculators.html">Math Calculator</a></h3>
+        <p>Fractions, percentages, trigonometry, and more.</p>
+      </div>
+      <div class="card">
+        <h3><a href="loan-calculator.html">Loan Calculator</a></h3>
+        <p>Estimate monthly payments and total interest.</p>
+      </div>
+      <div class="card">
+        <h3><a href="percentage-calculator.html">Percentage Calculator</a></h3>
+        <p>Solve percentage problems in one click.</p>
+      </div>
+      <div class="card">
+        <h3><a href="rgb-to-hex.html">RGB to HEX Converter</a></h3>
+        <p>Convert RGB values to HEX color codes.</p>
+      </div>
+    </div>
   </div>
 
   <footer>
-    &copy; 2021-2025 C4Calculator. All rights reserved.
+    &copy; 2025 C4Calculator. All rights reserved.
   </footer>
 
 </body>
