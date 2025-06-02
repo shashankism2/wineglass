@@ -1,0 +1,178 @@
+.body-class {
+  background-color: black;
+}
+.backgroundimage {
+  background-image: url(image/c1.jpg);
+  width: 98%;
+  height: 97%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.searchround {
+  border-radius: 60px;
+  padding: 2%;
+  width: 65%;
+  height: 9%;
+  font-size: 176%;
+  position: relative;
+  left: 17%;
+  top: 19vh;
+  outline: none;
+  /* background-image: url(image/search.png); */
+}
+.header {
+  background-color: dimgrey;
+  width: 102.4%;
+  height: 7%;
+  position: relative;
+  right: 1%;
+  bottom: 1vh;
+}
+.menuimage {
+  right: 1%;
+  background-image: url(image/menu1.png);
+  width: 6%;
+  height: 179%;
+  transform: scale(0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  bottom: 2.6vh;
+  float: left;
+}
+.option-left-panel {
+  background-color: GREY;
+  position: absolute;
+  width: 17%;
+  height: 93.1%;
+  right: 83%;
+  bottom: 0vh;
+  z-index: 1000;
+}
+.meimg {
+  width: 4%;
+  height: 73%;
+  position: relative;
+  left: 1%;
+  top: 11%;
+}
+.mainbody {
+  position: relative;
+  width: 100%;
+  min-height: 94%;
+}
+.homeimage {
+  right: 0%;
+  background-image: url(image/home.png);
+  width: 6%;
+  height: 179%;
+  transform: scale(0.4);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  bottom: 2.6vh;
+  float: right;
+  cursor: pointer;
+}
+.imageicon {
+  background-image: url(image/search.png);
+  position: relative;
+  width: 38%;
+  height: 80%;
+  transform: scale(0.06);
+  top: 16%;
+  left: 66%;
+  bottom: 24vh;
+  background-repeat: no-repeat;
+}
+.introspan {
+  position: absolute;
+  left: 40%;
+  bottom: 64%;
+  font-size: 124%;
+  /* background: steelblue; */
+  width: 30%;
+  height: 4%;
+}
+.searchresult {
+  position: absolute;
+  width: 63%;
+  height: 34%;
+  /* background-color: GREY; */
+  left: 23.5%;
+  top: 35.9%;
+  overflow-y: scroll;
+  background-color: grey;
+}
+.flagset {
+  background-image: url(image/flag1.png);
+  width: 48%;
+  height: 57%;
+  position: absolute;
+  top: 5vh;
+  transform: scale(0.1);
+  left: 49%;
+}
+.searchresdiv {
+  font-size: 160%;
+  padding-bottom: 0%;
+  padding-left: 3%;
+  cursor: pointer;
+}
+.leftpanelres {
+  font-size: 139%;
+  padding-top: 1%;
+  padding-left: 3%;
+  cursor: pointer;
+}
+.leftvalctrl {
+  width: 24%;
+  height: 94%;
+}
+.feetdiv {
+  position: relative;
+  right: 25%;
+  padding: 2%;
+  width: 100%;
+}
+.meterdiv {
+  position: relative;
+  right: 25%;
+  padding: 1%;
+}
+.Inchdiv {
+  padding: 2%;
+}
+.cmdiv {
+  padding: 2%;
+}
+.yarddiv {
+  padding: 2%;
+}
+.kmdiv {
+  padding: 2%;
+}
+.Milesdiv {
+  padding: 2%;
+}
+.inputboxctrl {
+  float: right;
+}
+.inputboxctrlfeet {
+  float: right;
+  position: relative;
+  left: 21%;
+}
+.inputboxctrlmeter {
+  float: right;
+  position: relative;
+  left: 22%;
+}
+.lenInput {
+  width: 145%;
+}
+.meterInput {
+  width: 145%;
+  left: 5%;
+  position: relative;
+}

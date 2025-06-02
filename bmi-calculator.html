@@ -2,204 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
   <title>BMI Calculator - C4Calculator</title>
+  <link rel="icon" href="image/C4Calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style-page.css">
+  <link rel="stylesheet" href="css/style-breadcrumb.css">
+  <link rel="stylesheet" href="css/style-calculator.css">
+  
   <style>
-    :root {
-      --primary-color: #00aaff;
-      --bg-color: #f9fafc;
-      --card-bg: white;
-      --text-color: #222;
-      --border-radius: 12px;
-    }
+	/* BMI Chart */
+	.bmi-chart {
+	margin-top: 30px;
+	text-align: center;
+	}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+	.bmi-chart table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 400px;
+	}
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
+	.bmi-chart th,
+	.bmi-chart td {
+	border: 1px solid #ccc;
+	padding: 8px;
+	font-size: 0.9rem;
+	}
 
-    header {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
+	.bmi-chart th {
+	background-color: #f0f0f0;
+	}
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    .home-icon {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .home-icon svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    main h2 {
-      text-align: center;
-      color: #005577;
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-
-    .description {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      font-size: 0.95rem;
-      text-align: center;
-      color: #444;
-    }
-
-    .calculator {
-      max-width: 400px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      padding: 20px;
-      border-radius: var(--border-radius);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    label {
-      display: block;
-      margin: 15px 0 5px;
-    }
-
-    input, select {
-      width: 100%;
-      padding: 10px;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #005577;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #007799;
-    }
-
-    #bmi-result {
-      margin-top: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
-	
-
-/* BMI Chart */
-.bmi-chart {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.bmi-chart table {
-  margin: 0 auto;
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 400px;
-}
-
-.bmi-chart th,
-.bmi-chart td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  font-size: 0.9rem;
-}
-
-.bmi-chart th {
-  background-color: #f0f0f0;
-}
-
-    .ad {
-      border: 2px dashed #444;
-      padding: 10px;
-      text-align: center;
-      background: #fafafa;
-      margin: 20px auto;
-      max-width: 400px;
-    }
-
-    .ad-fixed {
-      position: fixed;
-      top: 150px;
-      right: 10px;
-      width: 180px;
-      background: #fafafa;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    @media (max-width: 768px) {
-      .ad-fixed {
-        position: static;
-        width: auto;
-        margin-top: 20px;
-      }
-
-      .calculator,
-      .ad {
-        width: 100%;
-        box-sizing: border-box;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      main h2 {
-        font-size: 1.3rem;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <header>
-     <a href="index.html" class="home-icon" aria-label="Go to homepage">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-      </svg>
-    </a>
-    <h1>C4Calculator</h1>
-  </header>
-
-  <main>
+  <header >
+  <a href="index.html"><img src="image/c4calculator-logo.png" height="50px"></img></a>
+	</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="health-calculators.html">Health</a>
+	<span>&raquo;</span>
+    <a href="#">BMI Calculator</a>
+  </nav>
+</main>
+ 
+ <div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
     <h2>BMI Calculator</h2>
 
     <div class="calculator">
@@ -217,14 +73,16 @@
 
       <button onclick="calculateBMI()">Calculate BMI</button>
 
-      <p id="bmi-result"></p>
-	  
+      <p id="result"></p>
+	</div>
+	</div>
+	
+	
 	
 
- </div>
-
-    <div class="ad">
-	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+ 
+  <div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
      crossorigin="anonymous"></script>
 <!-- c4calculatorarticle -->
 <ins class="adsbygoogle"
@@ -235,8 +93,9 @@
      data-full-width-responsive="true"></ins>
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-    </div>
+</script>   
+  </div>
+ 
 	<div>
 	 <p class="description">
       Body Mass Index (BMI) is a quick screening tool that helps you estimate if your weight is healthy for your height. 
@@ -262,10 +121,11 @@
 	
 	</div>
 	
-  </main>
-
-  <aside class="ad ad-fixed">
-	  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+	</div>
+	
+		<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
      crossorigin="anonymous"></script>
 <!-- calculatorside -->
 <ins class="adsbygoogle"
@@ -275,7 +135,15 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-  </aside>
+	</div>
+	  
+	</div>
+	</div>
+
+
+
+
+ 
 
   <footer>
     &copy; 2025 C4Calculator. All rights reserved.
@@ -286,12 +154,11 @@
   const weight = parseFloat(document.getElementById('weight').value);
   const height = parseFloat(document.getElementById('height').value);
   const unit = document.getElementById('unit').value;
-  const result = document.getElementById('bmi-result');
+  const result = document.getElementById('result');
   
 
   if (!weight || !height || weight <= 0 || height <= 0) {
     result.textContent = 'Please enter valid values.';
-    pointer.style.left = '0%';
     return;
   }
 
@@ -329,3 +196,6 @@
 
 </body>
 </html>
+
+
+
