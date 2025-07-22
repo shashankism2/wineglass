@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Volume of a Cone Calculator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="geometric-shapes.html">Geometric Shapes</a>
+	<span>&raquo;</span>
+    <a href="#">Volume of a Cone Calculator</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>Volume of a Cone Calculator</h2>
+
+<div class="calculator">
+
+<label for="radius">Enter Radius(r):</label>
+<input type="number" id="radius"  placeholder="Enter Radius">
+<select id="radiusUnit">
+ 
+  <option value="m">meter</option>
+  <option value="cm">centimeter</option>
+  <option value="km">kilometer</option>
+  <option value="mm">millimeter</option>
+  <option value="in">inch</option>
+  <option value="ft">feet</option>
+</select>
+
+<br/>
+
+<label for="height">Enter Height(h):</label>
+<input type="number" id="height"  placeholder="Enter height">
+<select id="heightUnit">
+  
+  <option value="m">meter</option>
+  <option value="cm">centimeter</option>
+  <option value="km">kilometer</option>
+  <option value="mm">millimeter</option>
+  <option value="in">inch</option>
+  <option value="ft">feet</option>
+</select>
+
+<br/>
+
+<button onclick="calculateVolume()">Calculate Volume</button>
+
+<p id="result"></p>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div>
+	 <p class="description"></p>
+	 </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+	//conversion of units
+	function convertToMeters(length, unit) {
+		switch(unit) {
+        case "cm":
+            return length / 100;
+        case "mm":
+            return length / 1000;
+        case "in":
+            return length * 0.0254;
+        case "ft":
+            return length * 0.3048;
+		case "km":
+			return length * 1000;
+        default:
+            return length; // Already in meters or unknown unit
+			}
+	}
+
+
+    function calculateVolume() {
+        let radius = parseFloat(document.getElementById("radius").value);
+		let radius_original = radius;
+		let radiusUnit = document.getElementById("radiusUnit").value;
+		let height = parseFloat(document.getElementById("height").value);
+		let height_original = height;
+        let heightUnit = document.getElementById("heightUnit").value;
+       
+		
+		
+
+        // Check if the input is a valid number
+        if (isNaN(radius) || radius<=0 ||  isNaN(height) || height<=0) {
+            result.textContent = "Please enter a valid Number.";
+            return;
+        }
+		
+		// Convert lengths to a consistent unit, meters in this case
+		radius = convertToMeters(radius, radiusUnit);
+		height = convertToMeters(height, heightUnit);
+
+        // Calculate the volume
+        let volume = 1/3 * Math.PI * Math.pow(radius, 2) * height;
+
+        // Display the result
+       document.getElementById("result").innerHTML = `Volume of the Cone with radius ${radius_original}${radiusUnit} and ${height_original}${heightUnit} is: ${volume} m<sup>3</sup>`;
+    }
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,140 @@
+
+    :root {
+      --primary-color: #00aaff;
+      --bg-color: #f9fafc;
+      --card-bg: white;
+      --text-color: #222;
+      --border-radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+     
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      color: #005577;
+      margin: 30px 0 20px;
+      font-size: 2rem;
+    }
+
+    .home-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .home-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    .wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .ad {
+      border: 2px dashed #444;
+      padding: 10px;
+      text-align: center;
+      background: #fafafa;
+      margin: 20px auto;
+      max-width: 400px;
+    }
+
+    .ad-fixed {
+      position: fixed;
+      top: 150px;
+      right: 10px;
+      width: 180px;
+      background: #fafafa;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #888;
+      background-color: #fff;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    @media (max-width: 768px) {
+      .ad-fixed {
+        position: static;
+        width: auto;
+        margin-top: 20px;
+      }
+
+      .calculator,
+      .ad {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      main h2 {
+        font-size: 1.3rem;
+      }
+    }

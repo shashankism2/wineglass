@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Perimeter of a Square Calculator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="geometric-shapes.html">Geometric Shapes</a>
+	<span>&raquo;</span>
+    <a href="#">Perimeter of a Square Calculator</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>Perimeter of a Square Calculator</h2>
+
+<div class="calculator">
+
+<label for="side">Enter the length of a side(l):</label>
+<input type="number" id="side"  placeholder="Enter length">
+<select id="unit">
+  <option value="m">meter</option>
+  <option value="cm">centimeter</option>
+  <option value="km">kilometer</option>
+  <option value="mm">millimeter</option>
+  <option value="in">inch</option>
+  <option value="ft">feet</option>
+</select>
+<button onclick="calculateValue()">Calculate</button>
+
+<p id="result"></p>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div>
+	 <p class="description"></p>
+	 </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+    function calculateValue() {
+        let side = parseFloat(document.getElementById("side").value);
+        let unit = document.getElementById("unit").value;
+        let result = document.getElementById("result");
+        
+        // Check if the input is a valid number
+        if (isNaN(side) || side <= 0) {
+            result.textContent = "Please enter a valid length for the side.";
+            return;
+        }
+        
+        // Calculate the area
+        let perimeter = 4 * side;
+        
+        // Display the result
+       result.innerHTML = `Perimeter of a Square with side ${side}${unit} is ${perimeter} ${unit}`;
+    }
+</script>
+
+</body>
+</html>
+
