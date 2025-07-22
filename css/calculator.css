@@ -21,12 +21,14 @@
     }
 
     input, select {
-      width: 100%;
+      width: 20%;
       padding: 10px;
       font-size: 1rem;
       border: 1px solid #ccc;
       border-radius: 8px;
+	  margin: 5px;
     }
+
 
     button {
       width: 100%;

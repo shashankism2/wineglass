@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Surface Area of a Cylinder</title>
+  <link rel="icon" href="../image/C4Calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="geometric-shapes.html">Geometric Shapes</a>
+	<span>&raquo;</span>
+    <a href="#">Surface Area of a Cylinder</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>Surface Area of a Cylinder</h2>
+
+<div class="calculator">
+
+<label for="radius">Enter Radius(r):</label>
+<input type="number" id="radius"  placeholder="Enter Radius">
+<select id="radiusUnit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+
+<br>
+
+<label for="height">Enter Height(h):</label>
+<input type="number" id="height"  placeholder="Enter height">
+<select id="heightUnit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+
+<br>
+
+<label for="outputUnit">Select Output Unit:
+<select id="outputUnit">
+  <option value="m2">square meter (m²)</option>
+  <option value="cm2">square centimeter (cm²)</option>
+  <option value="km2">square kilometer(km²)</option>
+  <option value="mm2">square millimeter (mm²)</option>
+  <option value="in2">square inch (in²)</option>
+  <option value="ft2">square foot (ft²)</option>
+</select></label>
+
+<button onclick="calculateSurfaceArea()">Calculate Surface Area</button>
+
+<p id="result"></p>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div>
+	 <p class="description"></p>
+	 </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+	//conversion of units
+	function convertToMeters(length, unit) {
+		switch(unit) {
+        case "cm":
+            return length / 100;
+        case "mm":
+            return length / 1000;
+        case "in":
+            return length * 0.0254;
+        case "ft":
+            return length * 0.3048;
+		case "km":
+			return length * 1000;
+        default:
+            return length; // Already in meters or unknown unit
+			}
+	}
+	
+	// Convert square meters to desired output unit
+   function convertArea(areaInM2, unit) {
+        switch (unit) {
+        case "cm2":
+            return areaInM2 * 10000; // 1 m² = 10,000 cm²
+		case "km2":
+			return areaInM2 / 1_000_000; // 1 km² = 1,000,000 m²	
+        case "mm2":
+            return areaInM2 * 1_000_000; // 1 m² = 1,000,000 mm²
+        case "in2":
+            return areaInM2 * 1550.0031; // 1 m² ≈ 1550.0031 in²
+        case "ft2":
+            return areaInM2 * 10.7639; // 1 m² ≈ 10.7639 ft²
+        default:
+            return areaInM2; // default is m²
+    }
+  }
+
+
+    function calculateSurfaceArea() {
+    let radius = parseFloat(document.getElementById("radius").value);
+    let radius_original = radius;
+    let radiusUnit = document.getElementById("radiusUnit").value;
+    let height = parseFloat(document.getElementById("height").value);
+    let height_original = height;
+    let heightUnit = document.getElementById("heightUnit").value;
+
+
+    // Input validation
+    if (isNaN(radius) || radius <= 0 || isNaN(height) || height <= 0) {
+        document.getElementById("result").textContent = "Please enter a valid Number.";
+        return;
+    }
+
+    // Convert to meters
+    radius = convertToMeters(radius, radiusUnit);
+    height = convertToMeters(height, heightUnit);
+	
+	// Check if outputUnit selector exists
+    let outputUnitSelect = document.getElementById("outputUnit");
+    if (!outputUnitSelect) {
+        document.getElementById("result").textContent = "Output unit selector not found.";
+        return;
+    }
+
+    let outputUnit = outputUnitSelect.value;
+
+    // Surface Area formula: 2πr² + 2πrh ,Surface area in m²
+    let surfaceAreaInM2 = 2 * Math.PI * radius * (radius + height);
+	
+	// Convert to desired unit
+    let convertedArea = convertArea(surfaceAreaInM2, outputUnit);
+    let unitStr = outputUnit.replace("2", "<sup>2</sup>");
+
+    // Output
+    document.getElementById("result").innerHTML =
+        `Surface Area of the cylinder with radius ${radius_original}${radiusUnit} and height ${height_original}${heightUnit} is: ${convertedArea.toFixed(4)} ${unitStr}`;
+}
+</script>
+
+</body>
+</html>
