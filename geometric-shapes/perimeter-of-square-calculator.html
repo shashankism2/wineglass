@@ -47,6 +47,17 @@
   <option value="in">inch</option>
   <option value="ft">feet</option>
 </select>
+<br>
+<label for="outputUnit">Select Output Unit:
+<select id="outputUnit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select></label>
+
 <button onclick="calculateValue()">Calculate</button>
 
 <p id="result"></p>
@@ -96,22 +107,58 @@
 
 
 <script>
+
+ //conversion of units
+	function convertToMeters(length, unit) {
+		switch(unit) {
+        case "cm":
+            return length / 100;
+        case "mm":
+            return length / 1000;
+        case "in":
+            return length * 0.0254;
+        case "ft":
+            return length * 0.3048;
+		case "km":
+			return length * 1000;
+        default:
+            return length; // Already in meters or unknown unit
+			}
+	}		
+	
     function calculateValue() {
         let side = parseFloat(document.getElementById("side").value);
+		let side_original = side;
         let unit = document.getElementById("unit").value;
-        let result = document.getElementById("result");
+        
         
         // Check if the input is a valid number
         if (isNaN(side) || side <= 0) {
             result.textContent = "Please enter a valid length for the side.";
             return;
         }
+		
+		// Convert lengths to a consistent unit, meters in this case
+		side = convertToMeters(side, unit);
+		
+		// Check if outputUnit selector exists
+    let outputUnitSelect = document.getElementById("outputUnit");
+    if (!outputUnitSelect) {
+        document.getElementById("result").textContent = "Output unit selector not found.";
+        return;
+    }
+
+    let outputUnit = outputUnitSelect.value;
         
         // Calculate the area
-        let perimeter = 4 * side;
+        let perimeterInM = 4 * side;
+		
+		// Convert to desired unit
+    let convertedPerimeter = convertToMeters(perimeterInM, outputUnit);
+    let unitStr = outputUnit;
         
         // Display the result
-       result.innerHTML = `Perimeter of a Square with side ${side}${unit} is ${perimeter} ${unit}`;
+       result.innerHTML = `Perimeter of a Square with side ${side}${unit} is: ${convertedPerimeter.toFixed(4)} ${unitStr}`;
     }
 </script>
 

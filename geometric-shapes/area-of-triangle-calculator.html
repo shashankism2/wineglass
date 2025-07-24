@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
-  <title>Area of a Triangle Calculator</title>
+  <title>Area of a Triangle Calculator Using Sides – Heron’s Formula</title>
   <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="../css/style-page.css">
   <link rel="stylesheet" href="../css/style-breadcrumb.css">
@@ -26,14 +26,14 @@
     <span>&raquo;</span>
 	<a href="geometric-shapes.html">Geometric Shapes</a>
 	<span>&raquo;</span>
-    <a href="#">Area of a Triangle Calculator</a>
+    <a href="#">Area of a Triangle Calculator Using Sides – Heron’s Formula</a>
   </nav>
 </main>
 
 <div class="row">
     <div class="leftcolumn">
 	  <div class="card1">
-    <h2>Area of a Triangle Calculator</h2>
+    <h2>Area of a Triangle Calculator Using Sides – Heron’s Formula</h2>
 
 <div class="calculator">
 
@@ -108,9 +108,99 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>   
   </div>
-  <div>
-	 <p class="description"></p>
-	 </div>
+  <div class="description">
+	  <h1>How to Calculate Area of a Triangle Using Sides – Heron’s Formula Explained</h1>
+
+  <p>The area of a triangle is one of the most essential concepts in geometry, useful in fields ranging from architecture and design to land surveying and construction. While the most basic formula—½ × base × height—works only when the height is known, <strong>Heron’s Formula</strong> allows you to calculate the <strong>area of a triangle using just its three sides</strong>.</p>
+
+  <p>In this guide, we’ll explain how to use Heron’s Formula, illustrate it with an SVG diagram, walk through a few examples, and offer a simple online tool: the 
+    <a href="#">Area of a Triangle Calculator</a> 
+    to make your calculations even easier.
+  </p>
+
+  <h2>Formula to Calculate Area of Triangle Using Sides (Heron’s Formula)</h2>
+
+  <p>Given the sides of a triangle are:</p>
+  <ul>
+    <li><strong>a</strong>, <strong>b</strong>, and <strong>c</strong></li>
+  </ul>
+
+  <p><strong>Step 1:</strong> Calculate the semi-perimeter (s):</p>
+  <pre><code>s = (a + b + c) / 2</code></pre>
+
+  <p><strong>Step 2:</strong> Apply Heron's Formula:</p>
+  <pre><code>Area = √[s(s - a)(s - b)(s - c)]</code></pre>
+
+  <p>This method works for <strong>any triangle</strong> (scalene, isosceles, or equilateral), as long as the side lengths form a valid triangle.</p>
+
+  <h2>Example 1: Triangle with Sides 7, 8, and 9 Units</h2>
+  <p><strong>a = 7</strong>, <strong>b = 8</strong>, <strong>c = 9</strong></p>
+  <p><strong>Step 1:</strong> Semi-perimeter</p>
+  <pre><code>s = (7 + 8 + 9) / 2 = 12</code></pre>
+  <p><strong>Step 2:</strong> Apply formula</p>
+  <pre><code>Area = √[12 × (12 - 7) × (12 - 8) × (12 - 9)]
+     = √[12 × 5 × 4 × 3] = √720 ≈ 26.83 square units</code></pre>
+
+  <h2>Example 2: Equilateral Triangle with Sides 10 Units</h2>
+  <p><strong>a = b = c = 10</strong></p>
+  <p><strong>Step 1:</strong> Semi-perimeter</p>
+  <pre><code>s = (10 + 10 + 10) / 2 = 15</code></pre>
+  <p><strong>Step 2:</strong> Apply formula</p>
+  <pre><code>Area = √[15 × 5 × 5 × 5] = √1875 ≈ 43.30 square units</code></pre>
+
+  <h2>SVG Diagram of a Triangle</h2>
+
+  <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Triangle -->
+    <polygon points="50,150 250,150 150,30" fill="#d0eaff" stroke="#004080" stroke-width="2" />
+    
+    <!-- Side labels -->
+    <text x="145" y="20" font-size="14" fill="#004080">c</text>
+    <text x="30" y="100" font-size="14" fill="#004080">b</text>
+    <text x="220" y="100" font-size="14" fill="#004080">a</text>
+
+    <!-- Points -->
+    <circle cx="50" cy="150" r="3" fill="#004080" />
+    <circle cx="250" cy="150" r="3" fill="#004080" />
+    <circle cx="150" cy="30" r="3" fill="#004080" />
+
+    <!-- Point labels -->
+    <text x="40" y="165" font-size="12">A</text>
+    <text x="255" y="165" font-size="12">B</text>
+    <text x="150" y="20" font-size="12">C</text>
+  </svg>
+
+  <h2>Use the Online Calculator</h2>
+
+  <p>Manually calculating the area of a triangle with sides can be time-consuming and prone to error. That’s why we’ve built a free and easy-to-use tool for you.</p>
+
+  <p><a href="#">Try the Area of Triangle Calculator</a></p>
+
+  <h2>Tips & Considerations</h2>
+  <ul>
+    <li>Ensure the side lengths follow the <strong>triangle inequality rule</strong>: a + b > c, a + c > b, b + c > a.</li>
+    <li>If side lengths are in centimeters, the area will be in square centimeters.</li>
+    <li>This method works for all triangle types: scalene, isosceles, and equilateral.</li>
+  </ul>
+
+  <h2>Real-World Applications</h2>
+  <ul>
+    <li><strong>Land Surveying:</strong> Use Heron’s formula when triangle heights are not available.</li>
+    <li><strong>Architecture:</strong> Useful in triangular supports or roof design.</li>
+    <li><strong>Mathematics:</strong> Common in competitive exams and geometry problems.</li>
+  </ul>
+
+  <h2>Recap</h2>
+  <p>To calculate the area of a triangle using side lengths:</p>
+  <ol>
+    <li>Find the semi-perimeter <code>s = (a + b + c)/2</code></li>
+    <li>Use the formula <code>Area = √[s(s - a)(s - b)(s - c)]</code></li>
+    <li>Use our calculator for quick results!</li>
+  </ol>
+
+  <p>Try it now with our <a href="#">Area of Triangle Calculator</a></p>
+
+  </div>
 </div>
 
 <div class="rightcolumn">

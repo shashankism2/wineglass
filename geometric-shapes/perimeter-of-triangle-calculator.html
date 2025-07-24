@@ -74,6 +74,15 @@
   <option value="ft">feet</option>
 </select>
 <br>
+<label for="outputUnit">Select Output Unit:
+<select id="outputUnit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select></label>
 
 <button onclick="calculateValue()">Calculate</button>
 
@@ -172,15 +181,28 @@
         document.getElementById("result").innerHTML = "The given lengths do not form a valid triangle.";
         return;
     }
+	
+	// Check if outputUnit selector exists
+    let outputUnitSelect = document.getElementById("outputUnit");
+    if (!outputUnitSelect) {
+        document.getElementById("result").textContent = "Output unit selector not found.";
+        return;
+    }
+
+    let outputUnit = outputUnitSelect.value;
 
     // Calculate the semi-perimeter
     let s = (side1 + side2 + side3) / 2;
 
     // Calculate the area using Heron's formula
-    let perimeter = side1 + side2 + side3;
+    let perimeterInM = side1 + side2 + side3;
+	
+	// Convert to desired unit
+    let convertedPerimeter = convertToMeters(perimeterInM, outputUnit);
+    let unitStr = outputUnit;
 
     // Display the result
-    result.innerHTML = `Perimeter of the Triangle with sides ${side1_original}${unit1}, ${side2_original}${unit2} and ${side3_original}${unit3} is ${perimeter} m`;
+    result.innerHTML = `Perimeter of the Triangle with sides ${side1_original}${unit1}, ${side2_original}${unit2} and ${side3_original}${unit3} is: ${convertedPerimeter.toFixed(4)} ${unitStr}`;
 }
 </script>
 
