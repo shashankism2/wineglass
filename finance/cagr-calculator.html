@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>CAGR Calculator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+</head>
+<body>
+
+  <header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+	</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="finance-calculator.html">Finance</a>
+	<span>&raquo;</span>
+    <a href="#">CAGR Calculator</a>
+  </nav>
+</main>
+ 
+ <div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>CAGR Calculator</h2>
+
+    <div class="calculator">
+      <b>Starting Value </b><input type="text" id="number1" size="8" placeholder="Enter Value"> 
+	<br/><b>	Ending Value</b><input type="text" id="number2" placeholder="Enter Value" size="8">
+	<br/><b> Number of periods (in years)<input type="text" id="number3" placeholder="Enter Value" size="8">
+    <!-- Button to trigger the calculation -->
+	<br/>
+    <button onclick="calculateValue1()">Calculate</button> <!-- Element to display the result --><input type="text" id="value1" placeholder="" size ="8">%
+	<br/>
+	<button onclick="reset1()">Reset</button>
+</p> 
+ <p id ="result1"></p>
+ <p id = "table1"></p>
+<p id="prompt1"  style="color:red;"></br></p>  
+	</div>
+	</div>
+	
+	
+	
+
+ 
+  <div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+ 
+	<div>
+	 <p class="description">
+     </p>
+</div>
+	
+	</div>
+	
+	</div>
+	
+		<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+	</div>
+	</div>
+
+
+
+
+ 
+
+  <footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+  </footer>
+
+  <script>
+   // Function to add numbers
+        function calculateValue1() {
+
+            // Get the values from the textboxes and convert them to numbers
+            let num1 = Number(document.getElementById('number1').value);
+            let num2 = Number(document.getElementById('number2').value);
+			let num3 = Number(document.getElementById('number3').value);
+
+            // Check if the inputs are numbers
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                document.getElementById('prompt1').innerHTML = '<b><blink>Please enter valid numbers</blink></b>';
+				document.getElementById('value1').value = '';
+                return;
+            } 
+			document.getElementById('prompt1').innerHTML = '<br/>';
+              
+            // Add the numbers
+			
+			let value1 = (((num2/num1)**(1/num3))-1)*100;
+
+            // Display the result
+            document.getElementById('value1').value = value1;
+			document.getElementById('result1').innerHTML = "In " + num3 + " years your investment grew from " + num1 + " to " + num2 + ". Its compounded annual growth rate (CAGR) is " + value1.toFixed(4) + "%";
+			
+			let i = 0;
+			let table1 = '<table border=1><tr><td colspan="2">Increment Table</td></tr><tr><td>Year</td><td>Value</td>';
+			
+			do {
+			table1 = table1+ '<tr><td>' + i +'</td><td>' + Number((num1)*((1+value1/100)**i)).toFixed(2) +'</td></tr>'
+			i++;
+			}
+			while (i< num3+1);
+			
+			document.getElementById('table1').innerHTML = table1 + '</table>';
+        }
+	
+		
+		function reset1() {
+
+            document.getElementById('prompt1').innerHTML = '<br/>';
+			document.getElementById('number1').value = '';
+			document.getElementById('number2').value = '';
+			document.getElementById('value1').value = '';
+        }
+		
+
+		
+  </script>
+
+</body>
+</html>
+
+
+

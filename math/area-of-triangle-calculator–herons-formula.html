@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Area of a Triangle Calculator Using Sides – Heron’s Formula</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="geometric-shapes.html">Geometric Shapes</a>
+	<span>&raquo;</span>
+    <a href="#">Area of a Triangle Calculator Using Sides – Heron’s Formula</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>Area of a Triangle Calculator Using Sides – Heron’s Formula</h2>
+
+<div class="calculator">
+
+<p>Enter the lengths of the three sides of the Triangle:</p>
+
+<label for="side1">Side 1(a):</label>
+<input type="number" id="side1" placeholder="Enter length">
+<select id="unit1">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+
+<br>
+
+<label for="side2">Side 2(b):</label>
+<input type="number" id="side2" placeholder="Enter length">
+<select id="unit2">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+
+<br>
+
+<label for="side3">Side 3(c):</label>
+<input type="number" id="side3" placeholder="Enter length">
+<select id="unit3">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+
+<br>
+
+<label for="outputUnit">Select Output Unit:
+<select id="outputUnit">
+  <option value="m2">square meter (m²)</option>
+  <option value="cm2">square centimeter (cm²)</option>
+  <option value="km2">square kilometer(km²)</option>
+  <option value="mm2">square millimeter (mm²)</option>
+  <option value="in2">square inch (in²)</option>
+  <option value="ft2">square foot (ft²)</option>
+</select></label>
+
+<button onclick="calculateArea()">Calculate Area</button>
+
+<p id="result"></p>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+	  <h1>How to Calculate Area of a Triangle Using Sides – Heron’s Formula Explained</h1>
+
+  <p>The area of a triangle is one of the most essential concepts in geometry, useful in fields ranging from architecture and design to land surveying and construction. While the most basic formula—½ × base × height—works only when the height is known, <strong>Heron’s Formula</strong> allows you to calculate the <strong>area of a triangle using just its three sides</strong>.</p>
+
+  <p>In this guide, we’ll explain how to use Heron’s Formula, illustrate it with an SVG diagram, walk through a few examples, and offer a simple online tool: the 
+    <a href="#">Area of a Triangle Calculator</a> 
+    to make your calculations even easier.
+  </p>
+
+  <h2>Formula to Calculate Area of Triangle Using Sides (Heron’s Formula)</h2>
+
+  <p>Given the sides of a triangle are:</p>
+  <ul>
+    <li><strong>a</strong>, <strong>b</strong>, and <strong>c</strong></li>
+  </ul>
+
+  <p><strong>Step 1:</strong> Calculate the semi-perimeter (s):</p>
+  <pre><code>s = (a + b + c) / 2</code></pre>
+
+  <p><strong>Step 2:</strong> Apply Heron's Formula:</p>
+  <pre><code>Area = √[s(s - a)(s - b)(s - c)]</code></pre>
+
+  <p>This method works for <strong>any triangle</strong> (scalene, isosceles, or equilateral), as long as the side lengths form a valid triangle.</p>
+
+  <h2>Example 1: Triangle with Sides 7, 8, and 9 Units</h2>
+  <p><strong>a = 7</strong>, <strong>b = 8</strong>, <strong>c = 9</strong></p>
+  <p><strong>Step 1:</strong> Semi-perimeter</p>
+  <pre><code>s = (7 + 8 + 9) / 2 = 12</code></pre>
+  <p><strong>Step 2:</strong> Apply formula</p>
+  <pre><code>Area = √[12 × (12 - 7) × (12 - 8) × (12 - 9)]
+     = √[12 × 5 × 4 × 3] = √720 ≈ 26.83 square units</code></pre>
+
+  <h2>Example 2: Equilateral Triangle with Sides 10 Units</h2>
+  <p><strong>a = b = c = 10</strong></p>
+  <p><strong>Step 1:</strong> Semi-perimeter</p>
+  <pre><code>s = (10 + 10 + 10) / 2 = 15</code></pre>
+  <p><strong>Step 2:</strong> Apply formula</p>
+  <pre><code>Area = √[15 × 5 × 5 × 5] = √1875 ≈ 43.30 square units</code></pre>
+
+  <h2>SVG Diagram of a Triangle</h2>
+
+  <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Triangle -->
+    <polygon points="50,150 250,150 150,30" fill="#d0eaff" stroke="#004080" stroke-width="2" />
+    
+    <!-- Side labels -->
+    <text x="145" y="170" font-size="14" fill="#004080">c</text>
+    <text x="70" y="100" font-size="14" fill="#004080">b</text>
+    <text x="220" y="100" font-size="14" fill="#004080">a</text>
+
+    <!-- Points -->
+    <circle cx="50" cy="150" r="3" fill="#004080" />
+    <circle cx="250" cy="150" r="3" fill="#004080" />
+    <circle cx="150" cy="30" r="3" fill="#004080" />
+
+    <!-- Point labels -->
+    <text x="40" y="165" font-size="12">A</text>
+    <text x="255" y="165" font-size="12">B</text>
+    <text x="150" y="20" font-size="12">C</text>
+  </svg>
+
+  <h2>Use the Online Calculator</h2>
+
+  <p>Manually calculating the area of a triangle with sides can be time-consuming and prone to error. That’s why we’ve built a free and easy-to-use tool for you.</p>
+
+  <p><a href="#">Try the Area of Triangle Calculator</a></p>
+
+  <h2>Tips & Considerations</h2>
+  <ul>
+    <li>Ensure the side lengths follow the <strong>triangle inequality rule</strong>: a + b > c, a + c > b, b + c > a.</li>
+    <li>If side lengths are in centimeters, the area will be in square centimeters.</li>
+    <li>This method works for all triangle types: scalene, isosceles, and equilateral.</li>
+  </ul>
+
+  <h2>Real-World Applications</h2>
+  <ul>
+    <li><strong>Land Surveying:</strong> Use Heron’s formula when triangle heights are not available.</li>
+    <li><strong>Architecture:</strong> Useful in triangular supports or roof design.</li>
+    <li><strong>Mathematics:</strong> Common in competitive exams and geometry problems.</li>
+  </ul>
+
+  <h2>Recap</h2>
+  <p>To calculate the area of a triangle using side lengths:</p>
+  <ol>
+    <li>Find the semi-perimeter <code>s = (a + b + c)/2</code></li>
+    <li>Use the formula <code>Area = √[s(s - a)(s - b)(s - c)]</code></li>
+    <li>Use our calculator for quick results!</li>
+  </ol>
+
+  <p>Try it now with our <a href="#">Area of Triangle Calculator</a></p>
+
+  </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+		//conversion of units
+	function convertToMeters(length, unit) {
+		switch(unit) {
+        case "cm":
+            return length / 100;
+        case "mm":
+            return length / 1000;
+        case "in":
+            return length * 0.0254;
+        case "ft":
+            return length * 0.3048;
+		case "km":
+			return length * 1000;
+        default:
+            return length; // Already in meters or unknown unit
+			}
+	}	
+
+// Convert square meters to desired output unit
+   function convertArea(areaInM2, unit) {
+        switch (unit) {
+        case "cm2":
+            return areaInM2 * 10000; // 1 m² = 10,000 cm²
+		case "km2":
+			return areaInM2 / 1_000_000; // 1 km² = 1,000,000 m²	
+        case "mm2":
+            return areaInM2 * 1_000_000; // 1 m² = 1,000,000 mm²
+        case "in2":
+            return areaInM2 * 1550.0031; // 1 m² ≈ 1550.0031 in²
+        case "ft2":
+            return areaInM2 * 10.7639; // 1 m² ≈ 10.7639 ft²
+        default:
+            return areaInM2; // default is m²
+    }
+  }	
+    
+	function calculateArea() {
+	// Get the values of the lengths of the sides and their units
+    let side1 = parseFloat(document.getElementById("side1").value);
+	let side1_original = side1;
+    let unit1 = document.getElementById("unit1").value;
+
+    let side2 = parseFloat(document.getElementById("side2").value);
+	let side2_original = side2;
+    let unit2 = document.getElementById("unit2").value;
+
+    let side3 = parseFloat(document.getElementById("side3").value);
+	let side3_original = side3;
+    let unit3 = document.getElementById("unit3").value;
+
+    // Convert lengths to a consistent unit, meters in this case
+    side1 = convertToMeters(side1, unit1);
+    side2 = convertToMeters(side2, unit2);
+    side3 = convertToMeters(side3, unit3);
+
+    // Check if the values are valid numbers
+    if (isNaN(side1) || isNaN(side2) || isNaN(side3) || side1<=0 || side2<=0 || side3<=0) {
+        document.getElementById("result").innerHTML = "Please enter valid numbers for all three sides.";
+        return;
+    }
+
+    // Check if the given lengths form a valid triangle
+    if (side1 + side2 <= side3 || side1 + side3 <= side2 || side2 + side3 <= side1) {
+        document.getElementById("result").innerHTML = "The given lengths do not form a valid triangle.";
+        return;
+    }
+	
+	// Check if outputUnit selector exists
+    let outputUnitSelect = document.getElementById("outputUnit");
+    if (!outputUnitSelect) {
+        document.getElementById("result").textContent = "Output unit selector not found.";
+        return;
+    }
+
+    let outputUnit = outputUnitSelect.value;
+	
+
+    // Calculate the semi-perimeter
+    let s = (side1 + side2 + side3) / 2;
+
+    // Calculate the area using Heron's formula
+    let areaInM2 = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+	
+	// Convert to desired unit
+    let convertedArea = convertArea(areaInM2, outputUnit);
+    let unitStr = outputUnit.replace("2", "<sup>2</sup>");
+
+    // Display the result
+    result.innerHTML = `Area of the Triangle with sides ${side1_original}${unit1}, ${side2_original}${unit2} and ${side3_original}${unit3} is: ${convertedArea.toFixed(4)} ${unitStr}`;
+}
+</script>
+
+</body>
+</html>
+

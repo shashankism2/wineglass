@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Tambola Ticket Generator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+	
+
+#ticket {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+	display: flex;    
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    background-color: #fdfdfd;
+}
+
+.cell.empty {
+    background-color: #f5f5f5;
+}
+
+.cell.number {
+    font-weight: bold;
+    background-color: #f0f8ff;
+}
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="games.html">Games</a>
+	<span>&raquo;</span>
+    <a href="#">Tambola Ticket Generator</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  
+    <h1>Tambola Ticket Generator</h1>
+
+<div class="calculator">
+
+<button onclick="generateTicket()">Generate Tambola Ticket</button>
+<br>
+        <div id="ticket"></div>
+
+
+</div>
+
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+	
+  </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+   
+		function generateTicket() {
+    const ticket = Array.from({ length: 3 }, () => Array(9).fill(null));
+    const usedNumbers = Array(9).fill().map(() => new Set());
+
+    // Helper function to get a unique number within the range of a column
+    function getUniqueNumberForColumn(col) {
+        const min = col * 10 + 1;
+        const max = col === 8 ? 90 : min + 9;
+        let num;
+        do {
+            num = Math.floor(Math.random() * (max - min + 1)) + min;
+        } while (usedNumbers[col].has(num));
+        usedNumbers[col].add(num);
+        return num;
+    }
+
+    // Fill each row with exactly 5 numbers
+    for (let row = 0; row < 3; row++) {
+        const filledColumns = new Set();
+        
+        // Select 5 unique columns to fill numbers in the row
+        while (filledColumns.size < 5) {
+            filledColumns.add(Math.floor(Math.random() * 9));
+        }
+        
+        // Add a unique number in each selected column
+        filledColumns.forEach(col => {
+            ticket[row][col] = getUniqueNumberForColumn(col);
+        });
+    }
+
+    // Display the ticket
+    displayTicket(ticket);
+}
+
+function displayTicket(ticket) {
+    const ticketContainer = document.getElementById("ticket");
+    ticketContainer.innerHTML = ""; // Clear previous ticket
+
+    // Render the ticket
+    ticket.forEach(row => {
+        row.forEach(num => {
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            if (num === null) {
+                cell.classList.add("empty");
+            } else {
+                cell.classList.add("number");
+                cell.textContent = num;
+            }
+            ticketContainer.appendChild(cell);
+        });
+    });
+}
+
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Surface Area of a Hollow Cylinder Calculator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="geometric-shapes.html">Geometric Shapes</a>
+	<span>&raquo;</span>
+    <a href="#">Surface Area of a Hollow Cylinder Calculator</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>Surface Area of a Hollow Cylinder Calculator</h2>
+
+<div class="calculator">
+
+<label for="outerRadius">Enter Outer Radius (R):</label>
+<input type="number" id="outerRadius" placeholder="Outer Radius">
+<select id="outerRadiusUnit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+<br>
+
+<label for="innerRadius">Enter Inner Radius (r):</label>
+<input type="number" id="innerRadius" placeholder="Inner Radius">
+<select id="innerRadiusUnit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+<br>
+
+<label for="hollowHeight">Enter Height (h):</label>
+<input type="number" id="hollowHeight" placeholder="Height">
+<select id="hollowHeightUnit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+<br>
+
+<label for="outputUnit">Select Output Unit:
+<select id="outputUnit">
+  <option value="m2">square meter (m²)</option>
+  <option value="cm2">square centimeter (cm²)</option>
+  <option value="km2">square kilometer(km²)</option>
+  <option value="mm2">square millimeter (mm²)</option>
+  <option value="in2">square inch (in²)</option>
+  <option value="ft2">square foot (ft²)</option>
+</select></label>
+
+<button onclick="calculateHollowCylinderSurfaceArea()">Calculate Surface Area</button>
+
+<p id="result"></p>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div>
+	 <p class="description"></p>
+	 </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+	//conversion of units
+	function convertToMeters(length, unit) {
+		switch(unit) {
+        case "cm":
+            return length / 100;
+        case "mm":
+            return length / 1000;
+        case "in":
+            return length * 0.0254;
+        case "ft":
+            return length * 0.3048;
+		case "km":
+			return length * 1000;
+        default:
+            return length; // Already in meters or unknown unit
+			}
+	}
+	
+	// Convert square meters to desired output unit
+   function convertArea(areaInM2, unit) {
+        switch (unit) {
+        case "cm2":
+            return areaInM2 * 10000; // 1 m² = 10,000 cm²
+		case "km2":
+			return areaInM2 / 1_000_000; // 1 km² = 1,000,000 m²	
+        case "mm2":
+            return areaInM2 * 1_000_000; // 1 m² = 1,000,000 mm²
+        case "in2":
+            return areaInM2 * 1550.0031; // 1 m² ≈ 1550.0031 in²
+        case "ft2":
+            return areaInM2 * 10.7639; // 1 m² ≈ 10.7639 ft²
+        default:
+            return areaInM2; // default is m²
+    }
+  }
+
+
+    function calculateHollowCylinderSurfaceArea() {
+    let outerRadius = parseFloat(document.getElementById("outerRadius").value);
+    let innerRadius = parseFloat(document.getElementById("innerRadius").value);
+    let height = parseFloat(document.getElementById("hollowHeight").value);
+
+    let outerUnit = document.getElementById("outerRadiusUnit").value;
+    let innerUnit = document.getElementById("innerRadiusUnit").value;
+    let heightUnit = document.getElementById("hollowHeightUnit").value;
+	
+	// Check if outputUnit selector exists
+    let outputUnitSelect = document.getElementById("outputUnit");
+    if (!outputUnitSelect) {
+        document.getElementById("result").textContent = "Output unit selector not found.";
+        return;
+    }
+
+    let outputUnit = outputUnitSelect.value;
+
+    // Input validation
+    if (
+        isNaN(outerRadius) || outerRadius <= 0 ||
+        isNaN(innerRadius) || innerRadius <= 0 ||
+        isNaN(height) || height <= 0
+    ) {
+        document.getElementById("result").textContent = "Please enter valid numbers for all fields.";
+        return;
+    }
+
+    if (innerRadius >= outerRadius) {
+        document.getElementById("result").textContent = "Inner radius must be less than outer radius.";
+        return;
+    }
+
+    // Convert units to meters
+    outerRadius = convertToMeters(outerRadius, outerUnit);
+    innerRadius = convertToMeters(innerRadius, innerUnit);
+    height = convertToMeters(height, heightUnit);
+
+// Surface area in m²
+    let surfaceAreaInM2 = 2 * Math.PI * height * (outerRadius + innerRadius) +
+                          2 * Math.PI * (Math.pow(outerRadius, 2) - Math.pow(innerRadius, 2));
+
+    // Convert to desired unit
+    let convertedArea = convertArea(surfaceAreaInM2, outputUnit);
+    let unitStr = outputUnit.replace("2", "<sup>2</sup>");
+
+    // Output
+    document.getElementById("result").innerHTML =
+        `Surface Area of the hollow cylinder is: ${convertedArea.toFixed(4)} ${unitStr}`;
+}
+</script>
+
+</body>
+</html>
+
+

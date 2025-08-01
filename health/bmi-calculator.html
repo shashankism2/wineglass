@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>BMI Calculator - C4Calculator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+	/* BMI Chart */
+	.bmi-chart {
+	margin-top: 30px;
+	text-align: center;
+	}
+
+	.bmi-chart table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	width: 100%;
+	max-width: 400px;
+	}
+
+	.bmi-chart th,
+	.bmi-chart td {
+	border: 1px solid #ccc;
+	padding: 8px;
+	font-size: 0.9rem;
+	}
+
+	.bmi-chart th {
+	background-color: #f0f0f0;
+	}
+	
+	 input, select {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+	</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="health-calculator.html">Health</a>
+	<span>&raquo;</span>
+    <a href="#">BMI Calculator</a>
+  </nav>
+</main>
+ 
+ <div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>BMI Calculator</h2>
+
+    <div class="calculator">
+      <label for="unit">Select Units:</label>
+      <select id="unit" onchange="toggleUnits()">
+        <option value="metric">Metric (kg / cm)</option>
+        <option value="imperial">Imperial (lbs / in)</option>
+      </select>
+
+      <label for="weight">Weight:</label>
+      <input type="number" id="weight" placeholder="Enter weight" />
+
+      <label for="height">Height:</label>
+      <input type="number" id="height" placeholder="Enter height" />
+
+      <button onclick="calculateBMI()">Calculate BMI</button>
+
+      <p id="result"></p>
+	</div>
+	</div>
+	
+	
+	
+
+ 
+  <div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+ 
+	<div>
+	 <p class="description">
+      Body Mass Index (BMI) is a quick screening tool that helps you estimate if your weight is healthy for your height. 
+      It’s a widely used metric calculated from your weight and height, and is used to categorize you as underweight, normal weight, overweight, or obese.
+    </p>
+	<div class="bmi-chart">
+  <h3>WHO BMI Classification</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>BMI Range</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Underweight</td><td>&lt; 18.5</td></tr>
+      <tr><td>Normal weight</td><td>18.5 – 24.9</td></tr>
+      <tr><td>Overweight</td><td>25.0 – 29.9</td></tr>
+      <tr><td>Obese</td><td>30.0 and above</td></tr>
+    </tbody>
+  </table>
+</div>
+	
+	</div>
+	
+	</div>
+	
+		<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+	</div>
+	</div>
+
+
+
+
+ 
+
+  <footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+  </footer>
+
+  <script>
+    function calculateBMI() {
+  const weight = parseFloat(document.getElementById('weight').value);
+  const height = parseFloat(document.getElementById('height').value);
+  const unit = document.getElementById('unit').value;
+  const result = document.getElementById('result');
+  
+
+  if (!weight || !height || weight <= 0 || height <= 0) {
+    result.textContent = 'Please enter valid values.';
+    return;
+  }
+
+  let bmi;
+  if (unit === 'metric') {
+    const hMeters = height / 100;
+    bmi = weight / (hMeters * hMeters);
+  } else {
+    bmi = (703 * weight) / (height * height);
+  }
+
+  bmi = parseFloat(bmi.toFixed(2));
+  let category = '';
+  let position = 0;
+
+  if (bmi < 18.5) {
+    category = 'Underweight';
+    position = (bmi / 18.5) * 25;
+  } else if (bmi < 25) {
+    category = 'Normal weight';
+    position = 25 + ((bmi - 18.5) / (25 - 18.5)) * 25;
+  } else if (bmi < 30) {
+    category = 'Overweight';
+    position = 50 + ((bmi - 25) / (30 - 25)) * 25;
+  } else {
+    category = 'Obese';
+    position = 75 + ((bmi - 30) / 10) * 25;
+    if (position > 100) position = 100;
+  }
+
+  result.textContent = `Your BMI is ${bmi} (${category})`;
+  
+}
+  </script>
+
+</body>
+</html>
+
+
+

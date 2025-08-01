@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Random Number Generator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+</head>
+<body>
+
+  <header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+	</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="games.html">Games</a>
+	<span>&raquo;</span>
+    <a href="#">Random Number Generator</a>
+  </nav>
+</main>
+ 
+ <div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>Random Number Generator</h2>
+
+    <div class="calculator">
+       <!-- Textboxes for user input -->
+   Generate Random Number  between <input type="number" id="number1" size="8" placeholder="Enter Value" min="-999999" max="999999"> and <input type="number" id="number2" size="8" placeholder="Enter Value" min="-999999" max="999999">
+    <!-- Button to trigger the calculation -->
+	
+    <button onclick="calculateValue1()" id="myButton">Generate</button>
+	
+	
+</p> 
+ <p id="prompt" style="color:red;"></p>
+ <p id="result" style="color:red;"></p> 
+
+<br/>
+<br/>
+	</div>
+	</div>
+	
+	
+	
+
+ 
+  <div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+ 
+	<div>
+	 <p class="description">
+     </p>
+</div>
+	
+	</div>
+	
+	</div>
+	
+		<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+	</div>
+	</div>
+
+
+
+
+ 
+
+  <footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+  </footer>
+
+  <script>
+  		
+        function calculateValue1() {
+		
+			let num1 = Number(document.getElementById('number1').value);  
+			let num2 = Number(document.getElementById('number2').value);  
+			document.getElementById('result').innerHTML = num2;
+			
+			if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('prompt').innerHTML = '<b><blink>Please enter valid numbers</blink></b>';
+				document.getElementById('result').innerHTML = "";
+				return;
+            }
+			else if (num1>num2) {			
+				document.getElementById('prompt').innerHTML = '<b>The second number should be greater than 1st number.</b>';
+				document.getElementById('result').innerHTML = "";
+				return;			
+			}
+		
+			else if((num2-num1)<2) {
+				document.getElementById('prompt').innerHTML = '<b>There should be a gap of atleast 1 number between the two numbers provided.</b>';
+				document.getElementById('result').innerHTML = "";
+			
+			}
+			else {
+				document.getElementById('result').innerHTML = `<h2>Your Random Number is : ${Math.floor(Math.random() * (num2 + 1 - num1)) + num1}</h2>`;
+				document.getElementById('prompt').innerHTML = "";
+
+			}			
+			
+		
+			
+		}
+  </script>
+
+</body>
+</html>
+
+
+

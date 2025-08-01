@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Perimeter of a Semi-Circle Calculator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="geometric-shapes.html">Geometric Shapes</a>
+	<span>&raquo;</span>
+    <a href="#">Perimeter of a Semi-Circle Calculator</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h2>Perimeter of a Semi-Circle Calculator</h2>
+
+<div class="calculator">
+
+<label for="radius">Enter Radius(r):</label>
+<input type="number" id="radius"  placeholder="Enter Radius">
+<select id="unit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select>
+<br>
+
+<label for="outputUnit">Select Output Unit:
+<select id="outputUnit">
+  <option value="m">meter (m)</option>
+  <option value="cm">centimeter (cm)</option>
+  <option value="km">kilometer (km)</option>
+  <option value="mm">millimeter (mm)</option>
+  <option value="in">inch (in)</option>
+  <option value="ft">feet (ft)</option>
+</select></label>
+
+<button onclick="calculateArea()">Calculate Area</button>
+
+<p id="result"></p>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+      <h1>How to Calculate the Area of a Semi-Circle</h1>
+
+  <p>The <strong>semi-circle</strong> is a fundamental geometric shape often encountered in real-world applications like architecture, design, and engineering. Calculating its area is useful for estimating space, materials, and design layout. In this article, you’ll learn how to calculate the area of a semi-circle using a simple formula, visualize its parts with an SVG diagram, go through step-by-step examples, and use our free <a href="#">Area of a Semi-Circle Calculator</a>.</p>
+
+  <h2>What is a Semi-Circle?</h2>
+  <p>A <strong>semi-circle</strong> is exactly half of a full circle. If you cut a circle along its diameter, you get two equal semi-circles. It has a curved edge (half the circumference of a full circle) and a straight edge (the diameter).</p>
+  
+  <ul>
+    <li>The <strong>radius (r)</strong> is the distance from the center to the edge.</li>
+    <li>The <strong>diameter (d)</strong> is twice the radius: <code>d = 2r</code>.</li>
+  </ul>
+
+  <h2>Formula to Calculate Area of a Semi-Circle</h2>
+  <p>The area of a full circle is given by:</p>
+  <pre><code>Area of full circle = π × r²</code></pre>
+  <p>Therefore, the area of a semi-circle is half that:</p>
+  <pre><code>Area of semi-circle = (1/2) × π × r²</code></pre>
+
+  <p><strong>Where:</strong></p>
+  <ul>
+    <li><code>r</code> = radius of the semi-circle</li>
+    <li><code>π</code> (pi) ≈ 3.14159</li>
+  </ul>
+
+  <h2>Diagram of a Semi-Circle</h2>
+  <p>The following diagram visually explains a semi-circle and its components:</p>
+
+  <svg width="300" height="160" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 50 100 A 50 50 0 0 1 150 100" fill="#D0F0FF" stroke="#004080" stroke-width="2"/>
+    <line x1="50" y1="100" x2="150" y2="100" stroke="#004080" stroke-width="2"/>
+    <line x1="100" y1="100" x2="100" y2="50" stroke="#FF0000" stroke-dasharray="4"/>
+    <text x="95" y="45" font-size="14" fill="#FF0000">r</text>
+    <text x="70" y="115" font-size="14">Diameter (d)</text>
+    <circle cx="100" cy="100" r="2" fill="#000000"/>
+  </svg>
+
+  <h2>Step-by-Step Examples</h2>
+
+  <h3>Example 1:</h3>
+  <p><strong>Given:</strong> Radius <code>r = 7</code> cm</p>
+  <p><strong>Solution:</strong></p>
+  <pre>
+Area = (1/2) × π × r²  
+     = (1/2) × 3.1416 × (7 × 7)  
+     = 0.5 × 3.1416 × 49  
+     ≈ 76.96 cm²
+  </pre>
+  <p><strong> Answer: 76.96 cm²</strong></p>
+
+  <h3>Example 2:</h3>
+  <p><strong>Given:</strong> Radius <code>r = 10</code> meters</p>
+  <p><strong>Solution:</strong></p>
+  <pre>
+Area = (1/2) × π × 10²  
+     = 0.5 × 3.1416 × 100  
+     = 157.08 m²
+  </pre>
+  <p><strong> Answer: 157.08 m²</strong></p>
+
+  <h2>Using the Area of a Semi-Circle Calculator</h2>
+  <p>Instead of calculating manually, you can use our easy-to-use online tool.</p>
+  <p><strong> Try the <a href="#">Area of a Semi-Circle Calculator</a></strong> where you simply enter the radius, and it will instantly show the calculated area.</p>
+
+  <p>This is especially useful when working with decimal or large numbers, saving time and reducing errors.</p>
+
+  <h2>Real-World Applications</h2>
+  <ul>
+    <li><strong>Architecture:</strong> Designing archways, domes, and window frames</li>
+    <li><strong>Construction:</strong> Estimating the surface area for paving or flooring</li>
+    <li><strong>Gardening:</strong> Planning semi-circular lawns or flower beds</li>
+    <li><strong>Design & Engineering:</strong> Used in machine parts, signage, and road structures</li>
+  </ul>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <h3>Can I use diameter instead of radius?</h3>
+  <p>Yes! Since <code>r = d / 2</code>, substitute this into the formula:</p>
+  <pre><code>Area = (1/2) × π × (d / 2)²</code></pre>
+
+  <h3>Is the curved part counted in the area?</h3>
+  <p>Yes, the area includes everything enclosed by the curved edge and the diameter line — it is half the full circle.</p>
+
+  <h3>What is the unit of area?</h3>
+  <p>The area is always expressed in square units, such as cm², m², in², etc.</p>
+
+  <h2>Conclusion</h2>
+  <p>To calculate the area of a semi-circle, remember this simple formula:</p>
+  <pre><code>Area = (1/2) × π × r²</code></pre>
+  <p>For fast and accurate results, use our free <a href="#">Area of a Semi-Circle Calculator</a>.</p>
+	 
+	 </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+
+    //conversion of units
+	function convertToMeters(length, unit) {
+		switch(unit) {
+        case "cm":
+            return length / 100;
+        case "mm":
+            return length / 1000;
+        case "in":
+            return length * 0.0254;
+        case "ft":
+            return length * 0.3048;
+		case "km":
+			return length * 1000;
+        default:
+            return length; // Already in meters or unknown unit
+			}
+	}		
+	
+	
+    function calculateArea() {
+        let radius = parseFloat(document.getElementById("radius").value);
+		let radius_original = radius;
+        let unit = document.getElementById("unit").value;
+      
+
+        // Check if the input is a valid number
+        if (isNaN(radius) || radius<=0) {
+            result.textContent = "Please enter a valid length for the Radius.";
+            return;
+        }
+		
+		// Convert lengths to a consistent unit, meters in this case
+		radius = convertToMeters(radius, unit);
+		
+		// Check if outputUnit selector exists
+    let outputUnitSelect = document.getElementById("outputUnit");
+    if (!outputUnitSelect) {
+        document.getElementById("result").textContent = "Output unit selector not found.";
+        return;
+    }
+
+    let outputUnit = outputUnitSelect.value;
+
+        // Calculate the area
+        let perimeterInM = Math.PI * radius;
+		
+		// Convert to desired unit
+    let convertedPerimeter = convertToMeters(perimeterInM, outputUnit);
+    let unitStr = outputUnit;
+
+        // Display the result
+       result.innerHTML = `Perimeter of Semi-Circle with radius ${radius}${unit} is: ${convertedPerimeter.toFixed(4)} ${unitStr}`;
+    }
+</script>
+
+</body>
+</html>
+
