@@ -1,0 +1,127 @@
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>10 by 10 Multiplication Table</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <style>
+    .wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+	  max-width: 600px;
+      margin: 0 auto;
+      padding: 20px 30px 20px;
+      min-height: 350px;
+	  border-radius: 20px;
+	  background-color: white;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin: 20px;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      border: 1px solid #333;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<header >
+     <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+   </header>
+   
+   <main>
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+       <span>&raquo;</span>
+	  <a href="multiplication-table.html">Multiplication Table</a>
+	   <span>&raquo;</span>
+	  <a href="#">10 by 10 Multiplication Table</a>
+    </nav>
+  </main>
+  
+  <div class="row">
+    <div class="leftcolumn">
+	 <h2>10 by 10 Multiplication Table</h2>
+     <div class="wrapper">
+  
+  <table id="multiplicationTable"></table>
+  </div>
+  
+  <div class="ad-para">
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+	  </div>
+	  
+	   <div class="rightcolumn">
+<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	</div>
+	</div>
+
+  <script>
+    const table = document.getElementById("multiplicationTable");
+
+    // Create header row
+    const headerRow = document.createElement("tr");
+    headerRow.appendChild(document.createElement("th")); // Top-left empty cell
+    for (let i = 1; i <= 10; i++) {
+      const th = document.createElement("th");
+      th.textContent = i;
+      headerRow.appendChild(th);
+    }
+    table.appendChild(headerRow);
+
+    // Create rows
+    for (let row = 1; row <= 10; row++) {
+      const tr = document.createElement("tr");
+
+      // First cell in the row (row label)
+      const rowHeader = document.createElement("th");
+      rowHeader.textContent = row;
+      tr.appendChild(rowHeader);
+
+      // Multiplication values
+      for (let col = 1; col <= 10; col++) {
+        const td = document.createElement("td");
+        td.textContent = row * col;
+        tr.appendChild(td);
+      }
+
+      table.appendChild(tr);
+    }
+  </script>
+</body>
+</html>
