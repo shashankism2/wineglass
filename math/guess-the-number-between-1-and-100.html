@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Guess the Number between 1 & 100</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="geometric-shapes.html">Geometric Shapes</a>
+	<span>&raquo;</span>
+    <a href="#">Guess the Number between 1 & 100</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h1>Guess the Number between 1 & 100</h1>
+
+<div class="calculator">
+
+<p>
+    <!-- Textboxes for user input -->
+   Guess the number  <input type="text" id="number1" size="8" placeholder="Enter Value">
+    <!-- Button to trigger the calculation -->
+	
+    <button onclick="calculateValue1()" id="myButton">Guess the Number</button><br/><button onClick="window.location.reload();" hidden="hidden" id="refresh">Start a new guess</button>
+	<!-- <button onclick="calculateValue2()" hidden="hidden" id="reset">Start a new Game</button> -->	<!-- Element to display the result -->
+	
+	
+	
+</p> 
+ <p id="prompt" style="color:red;"></p>
+ <p id="result" style="color:red;"></p> 
+
+
+ 
+<br/>
+<br/>
+
+<button onClick="window.location.reload();">Restart</button>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+	 
+	  
+  </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+    let array = []
+		let num2 = Math.floor(Math.random() * 100 + 1);
+		document.getElementById('result2').innerHTML = num2;
+        function calculateValue1() {
+			let num1 = Number(document.getElementById('number1').value);  
+			if (isNaN(num1)) {
+                document.getElementById('prompt').innerHTML = '<b><blink>Please enter valid numbers</blink></b>';
+				document.getElementById('result').innerHTML = "";
+				return;
+            } 
+			
+			if (num1>100) {
+			
+			 document.getElementById('prompt').innerHTML = '<b><blink>Please guess the number between 1 and 100 only.</blink></b>';
+				
+				
+				if (array.length !=0) {
+				document.getElementById('result').innerHTML = num1 + " is wrong. Please guess a new number between 1 and 100. Your already guessed numbers are:  <br/><br/>" + array.join(" | ") + "<br/><br/> You have already taken " + array.length + " Chance(s).";
+				
+				}
+				return;
+		
+			} 
+			
+			else if (num1<1) {
+			
+			 document.getElementById('prompt').innerHTML = '<b><blink>Please guess the number between 1 and 100 only.</blink></b>';
+				
+				
+				if (array.length !=0) {
+				document.getElementById('result').innerHTML = num1 + " is wrong. Please guess a new number between 1 and 100. Your already guessed numbers are:  <br/><br/>" + array.join(" | ") + "<br/><br/> You have already taken " + array.length + " Chance(s).";
+				
+				}
+				return;
+		
+			} 
+			
+			else if (array.includes(num1) == true) {
+			document.getElementById('prompt').innerHTML = "";
+			document.getElementById('result').innerHTML = "You have already guessed " + num1 + " and it is wrong. Please guess a new number between 1 and 100. Your already guessed numbers are:  <br/><br/>" + array.join(" | ") + "<br/><br/> You have already taken " + array.length + " Chance(s).";
+			
+			}
+			else if (num1 != num2) {
+			document.getElementById('prompt').innerHTML = "";
+				array.push(num1)
+				array.sort(function(a, b){return a-b});
+			document.getElementById('result').innerHTML = "<b>"+ num1 + " is wrong</b>. Please guess a new number between 1 and 100. Your already guessed numbers are:  <br/><br/>" + array.join(" | ") + "<br/><br/> You have already taken " + array.length + " Chance(s).";
+		
+			}else {
+			array.push(num1)
+			document.getElementById('prompt').innerHTML = "";
+			document.getElementById('result').innerHTML = "Wow! you guessed the correct number " + num2 + " You took " + (array.length) + " Chances to guess the number. <br/><br/> Your guessed numers are: " + array.join(" | ") ;
+			document.getElementById("myButton").onclick = null;
+			document.getElementById("myButton").innerHTML = "The Number has been Revealed";
+			// document.getElementById("reset").style.display = "block";
+			document.getElementById("refresh").style.display = "block";
+
+			}			
+			
+		
+	
+				
+				
+			
+			
+		}
+		
+		
+		function calculateValue2() {
+  
+			document.getElementById('result').innerHTML = '';
+			document.getElementById('prompt').innerHTML = '';
+			document.getElementById('number1').value = '';
+			document.getElementById("myButton").onclick = "calculateValue1()";
+			document.getElementById("myButton").innerHTML = "Guess the Number";
+			document.getElementById("reset").style.display = "hidden";
+			let num2 = Math.floor(Math.random() * 100);
+				
+			
+		}
+</script>
+
+</body>
+</html>
+
+
+
+

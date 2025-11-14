@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Fibonacci Sequence Calculator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="arithmetic-calculators.html">Arithmetic Calculators</a>
+	<span>&raquo;</span>
+    <a href="#">Fibonacci Sequence Calculator</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h1>Fibonacci Sequence Calculator</h1>
+
+<div class="calculator">
+ <!-- Textboxes for user input -->
+   Print   <input type="text" id="number1" size="8" placeholder="Enter Value"> Fibonacci Numbers
+    <!-- Button to trigger the calculation -->
+	<br/>
+    <button onclick="calculateValue1()">Print</button> <!-- Element to display the result -->
+	<button onclick="calculateValue2()">Reset</button>
+</p> 
+ <p id="result"></p> 
+ <p id="prompt"></p>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+	 
+	  
+  </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+     function calculateValue1() {
+			let num1 = Number(document.getElementById('number1').value);  
+			if (isNaN(num1)) {
+                document.getElementById('prompt').innerHTML = '<b><blink>Please enter valid numbers</blink></b>';
+				document.getElementById('result').innerHTML = "";
+				return;
+            } 
+			
+						
+			let j=0;
+			let k=1;
+			
+			if (num1>50) {
+			
+			 document.getElementById('prompt').innerHTML = '<b><blink>This is a very big number. Do you really require such high number.</blink></b>';
+				document.getElementById('result').innerHTML = "";
+				return;		
+			}	
+			
+			if (num1==0) {
+				document.getElementById('result').innerHTML = "F0 = " + j;
+			}
+			else if (num1 == 1) {
+			
+				document.getElementById('result').innerHTML = "F0 = " + j + '<br/>' + "F1 = " + k;
+			}
+			
+			else { 
+			
+			let tableHTML = `<table border="1px solid black"><tbody><tr><td>F0</td><td>${j}</td></tr> <tr><td>F1</td><td>${k}</td></tr>`;
+			
+			
+			for (let i=2; i<=num1; i++) {
+  
+				let p=j+k;
+				tableHTML += `<tr><td>F${i}</td><td>${p}</td></tr>`;
+				
+				j=k;
+				k=p;
+				
+				}
+				tableHTML += `</tbody></table>`;
+				
+			document.getElementById('result').innerHTML = tableHTML;
+			}
+			
+		}
+		
+		
+		function calculateValue2() {
+  
+			document.getElementById('result').innerHTML = '';
+			document.getElementById('prompt').innerHTML = '';
+			document.getElementById('number1').value = '';
+			
+				
+			
+		}
+   
+</script>
+
+</body>
+</html>
+

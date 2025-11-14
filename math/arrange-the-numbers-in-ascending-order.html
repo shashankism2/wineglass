@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Arrange the numbers in ascending order</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="arithmetic-calculators.html">Arithmetic Calculators</a>
+	<span>&raquo;</span>
+    <a href="#">Arrange the numbers in ascending order</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h1>Arrange the numbers in ascending order</h1>
+
+<div class="calculator">
+    
+   Enter Value seperated by ","  <input type="text" id="number1" size="30" style="height:80px" placeholder="Enter Value">
+    <!-- Button to trigger the calculation -->
+	
+    <button onclick="calculateValue1()" id="myButton">Arrange</button> <button onClick="calculateValue2()"  id="refresh">Reset</button>
+	<!-- <button onclick="calculateValue2()" hidden="hidden" id="reset">Start a new Game</button> -->	<!-- Element to display the result -->
+	
+<br/>
+
+
+<p id="result"></p>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+	 
+	  
+  </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+        
+		  function calculateValue1() {
+			let num1 = document.getElementById('number1').value;  
+			let array = num1.split(',')
+			let array1 = num1.split(',')
+			array1.sort(function(a, b){return a-b});
+			
+			document.getElementById('result').innerHTML = `Your entered total ${array.length} numbers. <br/> The numbers arranged in ascending order is as below.<br/>${array1.join("<br/>")}`;
+
+			}	
+	
+		
+		function calculateValue2() {
+  
+			document.getElementById('result').innerHTML = '';
+			document.getElementById('prompt').innerHTML = '';
+			document.getElementById('number1').value = '';
+		
+			
+		}
+</script>
+
+</script>
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Percentage Calculator</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="geometric-shapes.html">Geometric Shapes</a>
+	<span>&raquo;</span>
+    <a href="#">Percentage Calculator</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h1>Percentage Calculator</h1>
+
+<div class="calculator">
+
+<p>
+    <!-- Textboxes for user input -->
+   What is  <input type="text" id="number1" size="8" placeholder="Enter Value"> % of <input type="text" id="number2" placeholder="Enter Value" size="8"> ?
+    <!-- Button to trigger the calculation -->
+	<br/>
+    <button onclick="calculateValue1()">Calculate</button> <!-- Element to display the result --><input type="text" id="value1" placeholder="" size ="8">
+	<br/>
+	<button onclick="reset1()">Reset</button>
+</p>    
+<p id="prompt1"  style="color:red;"></br></p>  
+
+
+<p>	
+   <input type="text" id="number21" placeholder="Enter Value" size="8" > is what percent of <input type="text" id="number22" placeholder="Enter Value" size="8"> ?
+    <!-- Button to trigger the calculation -->
+	<br/>
+    <button onclick="calculateValue2()">Calculate</button> <!-- Element to display the result --><input type="text" id="value2" placeholder="" size ="8"> %
+	<br/>
+	<button onclick="reset2()">Reset</button>
+    
+ </p>
+ <p id="prompt2"  style="color:red;"><br/></p>  
+ 
+ <p>	
+  What is percentage increase/decrease from <input type="text" id="number31" placeholder="Enter Value" size="8"> to <input type="text" id="number32" placeholder="Enter Value" size="8"> ?
+    <!-- Button to trigger the calculation -->
+	<br/>
+    <button onclick="calculateValue3()">Calculate</button> <!-- Element to display the result --><input type="text" id="value3" placeholder="" size ="8"> %
+	<br/>
+	<button onclick="reset3()">Reset</button>
+    
+ </p>
+ <p id="prompt3"  style="color:red;"><br/></p> 
+ 
+
+
+ 	<button onclick="resetall()">Reset All</button>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+	 
+	  
+  </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+      function calculateValue1() {
+
+            // Get the values from the textboxes and convert them to numbers
+            let num1 = Number(document.getElementById('number1').value);
+            let num2 = Number(document.getElementById('number2').value);
+
+            // Check if the inputs are numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('prompt1').innerHTML = '<b><blink>Please enter valid numbers</blink></b>';
+				document.getElementById('value1').value = '';
+                return;
+            } 
+			document.getElementById('prompt1').innerHTML = '<br/>';
+              
+            // Add the numbers
+            let value1 = num1/100*num2;
+
+            // Display the result
+            document.getElementById('value1').value = value1;
+        }
+		
+		function calculateValue2() {
+
+            // Get the values from the textboxes and convert them to numbers
+            let num21 = Number(document.getElementById('number21').value);
+            let num22 = Number(document.getElementById('number22').value);
+
+            // Check if the inputs are numbers
+            if (isNaN(num21) || isNaN(num22)) {
+                document.getElementById('prompt2').innerHTML = '<b><blink>Please enter valid numbers</blink></b>';
+				document.getElementById('value2').value = '';
+                return;
+            } 
+			document.getElementById('prompt2').innerHTML = '</br>';
+            // Add the numbers
+            let value2 = num21/num22*100;
+
+            // Display the result
+            document.getElementById('value2').value = value2;
+        }
+		
+		function calculateValue3() {
+
+            // Get the values from the textboxes and convert them to numbers
+            let num31 = Number(document.getElementById('number31').value);
+            let num32 = Number(document.getElementById('number32').value);
+
+            // Check if the inputs are numbers
+            if (isNaN(num31) || isNaN(num32)) {
+                document.getElementById('prompt3').innerHTML = '<b><blink>Please enter valid numbers</blink></b>';
+				document.getElementById('value3').value = '';
+                return;
+            } 
+			document.getElementById('prompt3').innerHTML = '</br>';
+            // Add the numbers
+            let value3 = (num32-num31)/num31*100;
+
+            // Display the result
+            document.getElementById('value3').value = value3;
+        }
+		
+		function reset1() {
+
+            document.getElementById('prompt1').innerHTML = '<br/>';
+			document.getElementById('number1').value = '';
+			document.getElementById('number2').value = '';
+			document.getElementById('value1').value = '';
+        }
+		
+		function reset2() {
+
+            document.getElementById('prompt2').innerHTML = '<br/>';
+			document.getElementById('number21').value = '';
+			document.getElementById('number22').value = '';
+			document.getElementById('value2').value = '';
+        }
+        
+		
+		function reset3() {
+
+            document.getElementById('prompt3').innerHTML = '<br/>';
+			document.getElementById('number31').value = '';
+			document.getElementById('number32').value = '';
+			document.getElementById('value3').value = '';
+        }
+		
+		
+		
+			
+		    
+		
+		function resetall() {
+			document.getElementById('prompt1').innerHTML = '<br/>';
+			document.getElementById('number1').value = '';
+			document.getElementById('number2').value = '';
+			document.getElementById('value1').value = '';
+			
+			document.getElementById('prompt2').innerHTML = '<br/>';
+			document.getElementById('number21').value = '';
+			document.getElementById('number22').value = '';
+			document.getElementById('value2').value = '';
+
+            document.getElementById('prompt3').innerHTML = '<br/>';
+			document.getElementById('number31').value = '';
+			document.getElementById('number32').value = '';
+			document.getElementById('value3').value = '';
+        }
+		
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

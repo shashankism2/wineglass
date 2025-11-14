@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Count the number of digits in a number</title>
+
+</head>
+
+<body>
+<!-- <h2>Count the number of digits in a number</h2> -->
+<p>
+    <!-- Textboxes for user input -->
+   Enter a Number <input type="text" id="sentence" size="30" style="height:80px" placeholder="Enter">
+    <!-- Button to trigger the calculation -->
+	<br/>
+    <button onclick="calculateValue1()">Calculate</button> <!-- Element to display the result -->
+	<button onclick="calculateValue2()">Reset</button>
+</p> 
+ <p id="result"></p> 
+ <p id="prompt" style="color:red;"><br/></p>
+
+<script>
+        
+        function calculateValue1() {
+			let sentence = document.getElementById('sentence').value;  
+			
+			if (isNaN(sentence)) {
+                document.getElementById('prompt').innerHTML = '<b>Please enter valid number</b>';
+				document.getElementById('result').innerHTML = "";
+				return;
+            } 
+			
+			const obj = {};
+			
+			for (let x of sentence) {
+				if(obj[x]) {
+					obj[x] +=1;
+				}
+				else {
+					obj[x] =1;
+				}
+			} 
+			
+			let txt = "In the number "+ sentence +", there are: <br/>";
+			for (let x in obj) {
+				txt +=  obj[x]+ " ("+ x + ")<br/>";
+			};
+			
+			document.getElementById('result').innerHTML = txt;
+			document.getElementById('prompt').innerHTML = '';
+		}
+		
+		
+		function calculateValue2() {
+  
+			document.getElementById('result').innerHTML = '';
+			document.getElementById('prompt').innerHTML = '';
+			document.getElementById('sentence').value = '';
+			
+				
+			
+		}
+</script>
+</body>
+</html>
