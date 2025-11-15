@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Count the number of digits in a number</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+	
+
+#ticket {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+	display: flex;    
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    background-color: #fdfdfd;
+}
+
+.cell.empty {
+    background-color: #f5f5f5;
+}
+
+.cell.number {
+    font-weight: bold;
+    background-color: #f0f8ff;
+}
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="games.html">Games</a>
+	<span>&raquo;</span>
+    <a href="#">Count the number of digits in a number</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  
+    <h1>Count the number of digits in a number</h1>
+
+<div class="calculator">
+<p>
+    <!-- Textboxes for user input -->
+   Enter a Number <input type="text" id="sentence" size="30" style="height:80px" placeholder="Enter">
+    <!-- Button to trigger the calculation -->
+	<br/>
+    <button onclick="calculateValue1()">Calculate</button> <!-- Element to display the result -->
+	<button onclick="calculateValue2()">Reset</button>
+</p> 
+ <p id="result"></p> 
+ <p id="prompt" style="color:red;"><br/></p>
+
+
+</div>
+
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+	
+  </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+        
+        function calculateValue1() {
+			let sentence = document.getElementById('sentence').value;  
+			
+			if (isNaN(sentence)) {
+                document.getElementById('prompt').innerHTML = '<b>Please enter valid number</b>';
+				document.getElementById('result').innerHTML = "";
+				return;
+            } 
+			
+			const obj = {};
+			
+			for (let x of sentence) {
+				if(obj[x]) {
+					obj[x] +=1;
+				}
+				else {
+					obj[x] =1;
+				}
+			} 
+			
+			let txt = "In the number "+ sentence +", there are: <br/>";
+			for (let x in obj) {
+				txt +=  obj[x]+ " ("+ x + ")<br/>";
+			};
+			
+			document.getElementById('result').innerHTML = txt;
+			document.getElementById('prompt').innerHTML = '';
+		}
+		
+		
+		function calculateValue2() {
+  
+			document.getElementById('result').innerHTML = '';
+			document.getElementById('prompt').innerHTML = '';
+			document.getElementById('sentence').value = '';
+			
+				
+			
+		}
+</script>
+
+</body>
+</html>
+

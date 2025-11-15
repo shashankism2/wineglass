@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7ZCJ731ZD"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-S7ZCJ731ZD'); </script>
+  <title>Guess the Number between 0 & 1000 with hints</title>
+  <link rel="icon" href="../image/c4calculator-favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/style-page.css">
+  <link rel="stylesheet" href="../css/style-breadcrumb.css">
+  <link rel="stylesheet" href="../css/style-calculator.css">
+  
+  <style>
+
+  </style>
+</head>
+<body>
+
+<header >
+  <a href="../index.html"><img src="../image/c4calculator-logo.png" height="50px"></img></a>
+</header>
+  
+<main>
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>&raquo;</span>
+	<a href="games.html">Games</a>
+	<span>&raquo;</span>
+    <a href="#">Guess the Number between 0 & 1000 with hints</a>
+  </nav>
+</main>
+
+<div class="row">
+    <div class="leftcolumn">
+	  <div class="card1">
+    <h1>Guess the Number between 0 & 1000 with hints</h1>
+
+<div class="calculator">
+
+ <!-- Textboxes for user input -->
+   Guess the number  <input type="text" id="number1" size="8" placeholder="Enter Value">
+    <!-- Button to trigger the calculation -->
+	
+    <button onclick="calculateValue1()" id="myButton">Guess the Number</button><br/><button onClick="window.location.reload();" hidden="hidden" id="refresh">Start a new guess</button>
+	<!-- <button onclick="calculateValue2()" hidden="hidden" id="reset">Start a new Game</button> -->	<!-- Element to display the result -->
+	
+	
+	
+</p> 
+ <p id="prompt" style="color:red;"></p>
+ <p id="result" style="color:blue;"></p> 
+
+
+ 
+<br/>
+<br/>
+
+
+
+<button onClick="window.location.reload();">Restart</button>
+</div>
+</div>
+
+<div class="ad-para">
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- c4calculatorarticle -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="3888462513"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+  </div>
+  <div class="description">
+	 
+	  
+  </div>
+</div>
+
+<div class="rightcolumn">
+	<div class="ad-sidebar">
+	    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8224820214533560"
+     crossorigin="anonymous"></script>
+<!-- calculatorside -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-8224820214533560"
+     data-ad-slot="1033497563"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+	  
+</div>
+</div>
+
+<footer>
+    &copy; 2025 C4Calculator. All rights reserved.
+</footer>
+
+
+
+<script>
+   
+		let array = []
+		let lower_number = 1;
+		let higher_number = 1000;
+		let actual_number = Math.floor(Math.random() * 1000) + 1;
+		let start_time;
+		let end_time;	
+		
+        function calculateValue1() {
+			
+			if (array.length ==0) {
+				start_time = Date.now()
+			}
+			
+			let guessed_number = Number(document.getElementById('number1').value);  
+			if (isNaN(guessed_number)) {
+                document.getElementById('prompt').innerHTML = '<b><blink>Please enter valid numbers</blink></b>';
+				document.getElementById('result').innerHTML = "";
+				return;
+            } 
+			
+			if (guessed_number>higher_number) {
+			
+			 document.getElementById('prompt').innerHTML = '<b><blink>Please guess the number between '+ lower_number + ' and ' + higher_number +' only. Don\'t worry we will not count this attempt.</blink></b>';
+				
+				
+				if (array.length !=0) {
+				document.getElementById('result').innerHTML ='Your already guessed numbers are:  <br/><br/>' + array.join(' | ') + '<br/><br/> You have already taken ' + array.length + ' Chance(s).';
+				
+				}
+				return;
+		
+			} 
+			
+			else if (guessed_number<lower_number) {
+			
+			 document.getElementById('prompt').innerHTML = '<b><blink>Please guess the number between ' + lower_number + ' and ' + higher_number +' only. Don\'t worry we will not count this attempt.</blink></b>';
+				
+				
+				if (array.length !=0) {
+				document.getElementById('result').innerHTML = 'Your already guessed numbers are:  <br/><br/>' + array.join(' | ') + '<br/><br/> You have already taken ' + array.length + ' Chance(s).';
+				
+				}
+				return;
+		
+			} 
+			
+			else if (array.includes(guessed_number) == true) {
+				document.getElementById('prompt').innerHTML = "";
+				document.getElementById('result').innerHTML = 'You have already guessed ' + guessed_number + ' and it is wrong. Please guess a new number between <b>' + lower_number + '</b> and <b>' + higher_number +'</b> only. Your already guessed numbers are:  <br/><br/>' + array.join(' | ') + '<br/><br/> You have already taken ' + array.length + ' Chance(s).';
+			
+			}
+			
+			else if (guessed_number < actual_number) {
+			document.getElementById('prompt').innerHTML = "";
+				array.push(guessed_number)
+				array.sort(function(a, b){return a-b});
+				lower_number = guessed_number; 
+			document.getElementById('result').innerHTML = '<b>'+ guessed_number + ' is wrong </b>. Please guess a <b>higher</b> number between <b>' + lower_number + '</b> and <b>' + higher_number +'</b> only. Your already guessed numbers are:  <br/><br/>' + array.join(' | ') + '<br/><br/> You have already taken ' + array.length + ' Chance(s).';
+		
+			}
+			
+			else if (guessed_number > actual_number) {
+			document.getElementById('prompt').innerHTML = "";
+				array.push(guessed_number)
+				array.sort(function(a, b){return a-b});
+				higher_number = guessed_number; 
+			document.getElementById('result').innerHTML = '<b>'+ guessed_number + ' is wrong </b>. Please guess a <b>lower</b> number between <b>' + lower_number + '</b> and <b>' + higher_number +'</b> only. Your already guessed numbers are:  <br/><br/>' + array.join(' | ') + '<br/><br/> You have already taken ' + array.length + ' Chance(s).';
+		
+			}
+			
+			
+			
+			else {
+			
+			end_time = Date.now();
+			let time_taken = (end_time - start_time)/1000;
+			array.push(guessed_number)
+			document.getElementById('prompt').innerHTML = "";
+			document.getElementById('result').innerHTML = "Wow! you guessed the correct number <b>" + actual_number + "</b>. You took <b>" + (array.length) + " chances</b> and <b>" + time_taken + " seconds</b> to guess the number. <br/><br/> Your guessed numbers are: " + array.join(" | ") ;
+			document.getElementById("myButton").onclick = null;
+			document.getElementById("myButton").innerHTML = "The Number has been Revealed";
+			// document.getElementById("reset").style.display = "block";
+			document.getElementById("refresh").style.display = "block";
+
+			}			
+			
+		
+	
+				
+				
+			
+			
+		}
+		
+		/*
+		function calculateValue2() {
+  
+			document.getElementById('result').innerHTML = '';
+			document.getElementById('prompt').innerHTML = '';
+			document.getElementById('number1').value = '';
+			document.getElementById("myButton").onclick = "calculateValue1()";
+			document.getElementById("myButton").innerHTML = "Guess the Number";
+			document.getElementById("reset").style.display = "hidden";
+			let actual_number = Math.floor(Math.random() * 100);
+				
+		
+		}
+		*/
+   
+</script>
+
+</body>
+</html>
+
+
