@@ -62,7 +62,54 @@
 </script>   
   </div>
   <div>
-	 <p class="description"></p>
+	 <p class="description">
+	 <p>
+The <strong>Absolute Difference Calculator</strong> is a simple and efficient tool that helps you find 
+the non-negative difference between two numbers. The absolute difference tells you how far apart two 
+values are on the number line, regardless of which one is bigger.
+</p>
+
+<p>The formula used is:</p>
+
+<p style="text-align:center; font-size:1.2em;"><strong>| Number 1 - Number 2 |</strong></p>
+
+<p>This means the result is <strong>always positive</strong> or <strong>zero</strong>.</p>
+
+<h3>Examples</h3>
+
+<ul>
+  <li>
+    <strong>Number 1:</strong> 10 &nbsp; <strong>Number 2:</strong> 3<br>
+    <strong>Result:</strong> |10 - 3| = 7
+  </li><br>
+
+  <li>
+    <strong>Number 1:</strong> 4 &nbsp; <strong>Number 2:</strong> 12<br>
+    <strong>Result:</strong> |4 - 12| = 8
+  </li><br>
+
+  <li>
+    <strong>Number 1:</strong> -5 &nbsp; <strong>Number 2:</strong> 2<br>
+    <strong>Result:</strong> |-5 - 2| = 7
+  </li>
+</ul>
+
+<h3>Where It’s Useful</h3>
+
+<ul>
+  <li>Comparing two values</li>
+  <li>Understanding differences in data sets</li>
+  <li>Measurement and distance calculations</li>
+  <li>School and college math problems</li>
+  <li>Everyday numerical comparisons</li>
+</ul>
+
+<p>
+This calculator provides a fast, accurate, and user-friendly way to determine how much two numbers differ—
+ideal for students, teachers, and professionals alike.
+</p>
+	 
+	 </p>
 	 </div>
 </div>
 
@@ -95,7 +142,7 @@
 			let number2 = parseFloat(document.getElementById('numberInput2').value);
 			
 			if (isNaN(number1) || isNaN(number2)) {
-                document.getElementById('results').innerHTML = "<p>Please enter a valid number.</p>";
+                document.getElementById('result').innerHTML = "<p>Please enter a valid number.</p>";
                 return;
             }
 			
